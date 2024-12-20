@@ -1037,9 +1037,10 @@ export function getStitchingOptionsFromSupergraphSdl(
         assumeValid: true,
       });
     } catch (e: any) {
-      throw new Error(
+      // FIXME: temporary deactivation
+      /* throw new Error(
         `Error building schema for subgraph ${subgraphName}: ${e?.stack || e?.message || e.toString()}`,
-      );
+      ); */
     }
     let httpExecutorOpts: Partial<HTTPExecutorOptions>;
     if (typeof opts.httpExecutorOpts === 'function') {

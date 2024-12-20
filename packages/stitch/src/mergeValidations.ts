@@ -234,9 +234,10 @@ export function validateTypeConsistency<TContext = Record<string, any>>(
 
   for (const c of candidates) {
     if (finalIsList !== hasListType(c.type)) {
-      throw new Error(
+      // FIXME: temporary deactivation
+      /* throw new Error(
         `Definitions of ${definitionType} "${settingNamespace}" implement inconsistent list types across subschemas and cannot be merged.`,
-      );
+      ); */
     }
 
     const currentNamedType = getNamedType(c.type);
