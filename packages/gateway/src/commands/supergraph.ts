@@ -74,7 +74,7 @@ export const addCommand: AddCommand = (ctx, cli) =>
         | GatewayHiveCDNOptions
         | GatewayGraphOSManagedFederationOptions = 'supergraph.graphql';
       if (schemaPathOrUrl) {
-        ctx.log.info(`Found schema path or URL: ${schemaPathOrUrl}`);
+        ctx.log.info(`Supergraph will be loaded from ${schemaPathOrUrl}`);
         if (hiveCdnKey) {
           ctx.log.info(`Using Hive CDN key`);
           if (!isUrl(schemaPathOrUrl)) {
@@ -158,6 +158,7 @@ export const addCommand: AddCommand = (ctx, cli) =>
         ctx.log.info(`Configuring Hive registry reporting`);
         registryConfig = {
           reporting: {
+            ...loadedConfig.reporting,
             type: 'hive',
             token: hiveRegistryToken,
           },
@@ -249,7 +250,9 @@ export const addCommand: AddCommand = (ctx, cli) =>
         process.exit(1);
       }
       return runSupergraph(ctx, config);
-    });
+    })
+    .allowUnknownOption(process.env.NODE_ENV === 'test')
+    .allowExcessArguments(process.env.NODE_ENV === 'test');
 
 export type SupergraphConfig = GatewayConfigSupergraph & GatewayCLIConfig;
 

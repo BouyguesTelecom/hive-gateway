@@ -662,7 +662,12 @@ export function createGatewayRuntime<
 
       if (!isDynamicUnifiedGraphSchema(config.supergraph)) {
         // no polling for static schemas
+        logger.debug(`Disabling polling for static supergraph`);
         delete config.pollingInterval;
+      } else if (!config.pollingInterval) {
+        logger.debug(
+          `Polling interval not set for supergraph, if you want to get updates of supergraph, we recommend setting a polling interval`,
+        );
       }
 
       unifiedGraphFetcher = () =>
@@ -709,10 +714,14 @@ export function createGatewayRuntime<
         unifiedGraphManager.getUnifiedGraph(),
         (schema) => {
           if (!schema) {
-            logger.debug(`Readiness check failed: Supergraph cannot be loaded`);
+            logger.debug(
+              `Readiness check failed because supergraph has not been loaded yet or failed to load`,
+            );
             return false;
           }
-          logger.debug(`Readiness check passed: Supergraph loaded`);
+          logger.debug(
+            `Readiness check passed because supergraph has been loaded already`,
+          );
           return true;
         },
         (err) => {
@@ -1087,10 +1096,6 @@ function isDynamicUnifiedGraphSchema(
     return false;
   }
   if (typeof schema === 'string') {
-    if (isValidPath(schema) && !isUrl(String(schema))) {
-      // local path
-      return false;
-    }
     try {
       // sdl
       parse(schema);
