@@ -50,6 +50,8 @@
     }
   },
   "dependencies": {
+    "@bouygues-telecom/graphql-tools-federation": "workspace:^",
+    "@bouygues-telecom/graphql-tools-stitch": "workspace:^",
     "@envelop/core": "^5.0.0",
     "@envelop/disable-introspection": "^6.0.0",
     "@envelop/generic-auth": "^8.0.0",
@@ -66,8 +68,6 @@
     "@graphql-tools/batch-delegate": "workspace:^",
     "@graphql-tools/delegate": "workspace:^",
     "@graphql-tools/executor-http": "workspace:^",
-    "@graphql-tools/federation": "workspace:^",
-    "@graphql-tools/stitch": "workspace:^",
     "@graphql-tools/utils": "^10.6.2",
     "@graphql-tools/wrap": "workspace:^",
     "@graphql-yoga/plugin-apollo-usage-report": "^0.5.3",
