@@ -1031,17 +1031,12 @@ export function getStitchingOptionsFromSupergraphSdl(
     if (opts.onSubgraphAST) {
       schemaAst = opts.onSubgraphAST(subgraphName, schemaAst);
     }
-    try {
-      schema = buildASTSchema(schemaAst, {
-        assumeValidSDL: true,
-        assumeValid: true,
-      });
-    } catch (e: any) {
-      // FIXME: temporary deactivation
-      /* throw new Error(
-        `Error building schema for subgraph ${subgraphName}: ${e?.stack || e?.message || e.toString()}`,
-      ); */
-    }
+
+    schema = buildASTSchema(schemaAst, {
+      assumeValidSDL: true,
+      assumeValid: true,
+    });
+
     let httpExecutorOpts: Partial<HTTPExecutorOptions>;
     if (typeof opts.httpExecutorOpts === 'function') {
       httpExecutorOpts = opts.httpExecutorOpts({
