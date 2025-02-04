@@ -1,6 +1,6 @@
 {
   "name": "@bouygues-telecom/graphql-tools-federation",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Useful tools to create and manipulate GraphQL schemas.",
   "repository": {
@@ -38,13 +38,13 @@
     "graphql": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0"
   },
   "dependencies": {
-    "@bouygues-telecom/graphql-tools-stitch": "workspace:^",
-    "@graphql-tools/delegate": "workspace:^",
-    "@graphql-tools/executor-http": "workspace:^",
+    "@bouygues-telecom/graphql-tools-stitch": "^0.0.1",
+    "@graphql-tools/delegate": "10.2.8",
+    "@graphql-tools/executor-http": "1.2.1",
     "@graphql-tools/merge": "^9.0.12",
     "@graphql-tools/schema": "^10.0.11",
     "@graphql-tools/utils": "^10.6.2",
-    "@graphql-tools/wrap": "workspace:^",
+    "@graphql-tools/wrap": "10.0.26",
     "@graphql-yoga/typed-event-target": "^3.0.1",
     "@whatwg-node/disposablestack": "^0.0.5",
     "@whatwg-node/events": "^0.1.2",

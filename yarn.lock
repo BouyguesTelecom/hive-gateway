@@ -1901,13 +1901,13 @@ __metadata:
   dependencies:
     "@apollo/gateway": "npm:^2.5.4"
     "@apollo/subgraph": "npm:^2.5.4"
-    "@bouygues-telecom/graphql-tools-stitch": "workspace:^"
-    "@graphql-tools/delegate": "workspace:^"
-    "@graphql-tools/executor-http": "workspace:^"
+    "@bouygues-telecom/graphql-tools-stitch": "npm:^0.0.1"
+    "@graphql-tools/delegate": "npm:10.2.8"
+    "@graphql-tools/executor-http": "npm:1.2.1"
     "@graphql-tools/merge": "npm:^9.0.12"
     "@graphql-tools/schema": "npm:^10.0.11"
     "@graphql-tools/utils": "npm:^10.6.2"
-    "@graphql-tools/wrap": "workspace:^"
+    "@graphql-tools/wrap": "npm:10.0.26"
     "@graphql-yoga/typed-event-target": "npm:^3.0.1"
     "@whatwg-node/disposablestack": "npm:^0.0.5"
     "@whatwg-node/events": "npm:^0.1.2"
@@ -1921,9 +1921,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@bouygues-telecom/graphql-tools-stitch@workspace:^, @bouygues-telecom/graphql-tools-stitch@workspace:packages/stitch":
-  version: 0.0.0-use.local
-  resolution: "@bouygues-telecom/graphql-tools-stitch@workspace:packages/stitch"
+"@bouygues-telecom/graphql-tools-stitch@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "@bouygues-telecom/graphql-tools-stitch@npm:0.0.1"
   dependencies:
     "@graphql-tools/batch-delegate": "workspace:^"
     "@graphql-tools/delegate": "workspace:^"
@@ -1932,6 +1932,24 @@ __metadata:
     "@graphql-tools/schema": "npm:^10.0.11"
     "@graphql-tools/utils": "npm:^10.6.2"
     "@graphql-tools/wrap": "workspace:^"
+    tslib: "npm:^2.8.1"
+  peerDependencies:
+    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+  checksum: 10c0/04b6dcae3093c79da566261efc4123de17ee72fd36973f607217737180310bf6d2e1098ad752d79318547dede86be7d971c74dd962684968741b1923babbe5eb
+  languageName: node
+  linkType: hard
+
+"@bouygues-telecom/graphql-tools-stitch@workspace:^, @bouygues-telecom/graphql-tools-stitch@workspace:packages/stitch":
+  version: 0.0.0-use.local
+  resolution: "@bouygues-telecom/graphql-tools-stitch@workspace:packages/stitch"
+  dependencies:
+    "@graphql-tools/batch-delegate": "npm:9.0.24"
+    "@graphql-tools/delegate": "npm:10.2.8"
+    "@graphql-tools/executor": "npm:^1.3.6"
+    "@graphql-tools/merge": "npm:^9.0.12"
+    "@graphql-tools/schema": "npm:^10.0.11"
+    "@graphql-tools/utils": "npm:^10.6.2"
+    "@graphql-tools/wrap": "npm:10.0.26"
     dataloader: "npm:^2.2.3"
     graphql: "npm:^16.9.0"
     pkgroll: "npm:2.5.1"
@@ -3840,7 +3858,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/batch-delegate@npm:^9.0.10, @graphql-tools/batch-delegate@npm:^9.0.16, @graphql-tools/batch-delegate@workspace:^, @graphql-tools/batch-delegate@workspace:packages/batch-delegate":
+"@graphql-tools/batch-delegate@npm:9.0.24, @graphql-tools/batch-delegate@npm:^9.0.10, @graphql-tools/batch-delegate@npm:^9.0.16, @graphql-tools/batch-delegate@workspace:^, @graphql-tools/batch-delegate@workspace:packages/batch-delegate":
   version: 0.0.0-use.local
   resolution: "@graphql-tools/batch-delegate@workspace:packages/batch-delegate"
   dependencies:
@@ -3922,7 +3940,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@graphql-tools/executor-http@workspace:^, @graphql-tools/executor-http@workspace:packages/executors/http":
+"@graphql-tools/executor-http@npm:1.2.1, @graphql-tools/executor-http@workspace:^, @graphql-tools/executor-http@workspace:packages/executors/http":
   version: 0.0.0-use.local
   resolution: "@graphql-tools/executor-http@workspace:packages/executors/http"
   dependencies:
@@ -4188,7 +4206,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/wrap@npm:^10.0.18, @graphql-tools/wrap@workspace:^, @graphql-tools/wrap@workspace:packages/wrap":
+"@graphql-tools/wrap@npm:10.0.26, @graphql-tools/wrap@npm:^10.0.18, @graphql-tools/wrap@workspace:^, @graphql-tools/wrap@workspace:packages/wrap":
   version: 0.0.0-use.local
   resolution: "@graphql-tools/wrap@workspace:packages/wrap"
   dependencies:
